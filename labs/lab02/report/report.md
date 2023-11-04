@@ -1,8 +1,8 @@
 ---
 ## Front matter
-title: "Отчёт по лабораторной работе №2"
-subtitle: "Операционные системы"
-author: "Ситникова Диана НПИбд-01-22"
+title: "Report for Lab02"
+subtitle: "Operating System"
+author: "Sitnikova Diana"
 
 ## Generic otions
 lang: ru-RU
