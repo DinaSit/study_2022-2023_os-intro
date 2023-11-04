@@ -6,7 +6,7 @@ author: "Sitnikova Diana"
 
 ## Generic otions
 lang: ru-RU
-toc-title: "Содержание"
+toc-title: "Content"
 
 ## Bibliography
 bibliography: bib/cite.bib
