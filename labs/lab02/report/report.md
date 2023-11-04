@@ -70,7 +70,7 @@ dnf install gh
   cat ~/.ssh/id_rsa.pub  
 ![Рис6](image/Рис6.png){#fig:001 width=70%}  
 * далее добавляем скопированный ключ SSH на GitHub:  
-![Рис7](image/Рис7.png){#fig:001 width=70%}
+![Рис7](image/Рис7.png)
 
 ### Создание ключа pgp
 
