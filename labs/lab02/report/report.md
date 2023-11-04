@@ -1,4 +1,5 @@
-
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 ## **РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 ### **Факультет физико-математических и естественных наук**
 ### **Кафедра прикладной информатики и теории вероятностей**
@@ -98,7 +99,7 @@ dnf install gh
 * Используя введёный email, укажите Git применять его при подписи коммитов:  
   git config --global user.signingkey <PGP Fingerprint>  
   git config --global commit.gpgsign true  
-  git config --global gpg.program "$(which gpg2)"  
+  git config --global gpg.program S(which gpg2)  
 ![Рис12](image/Рис12.png){#fig:001 width=70%}  
 ## Настройка gh
 * Для начала необходимо авторизоваться  
