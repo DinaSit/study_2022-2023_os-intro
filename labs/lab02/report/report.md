@@ -39,11 +39,11 @@
 
 Установим git при помощи команды:  
 dnf install git  
-![Рис1](image/Рис1.png){#fig:001 width=70%}  
+![Рис1](image/Рис1.png)  
 Установим gh при помощи команды:  
 dnf install gh  
-![Рис2](image/Рис2.png){#fig:001 width=70%}  
-![Рис3](image/Рис3.png){#fig:001 width=70%}  
+![Рис2](image/Рис2.png)  
+![Рис3](image/Рис3.png)  
 
 ### Базовая настройка git
 
@@ -52,14 +52,14 @@ dnf install gh
   git config --global user.email "work@mail"
 * Настроим utf-8 в выводе сообщений git командой:  
   git config --global core.quotepath false  
-![Рис4](image/Рис4.png){#fig:001 width=70%}  
+![Рис4](image/Рис4.png)  
 * Зададим имя начальной ветки (будем называть её master):  
   git config --global init.defaultBranch master
 * Параметр autocrlf:  
   git config --global core.autocrlf input
 * Параметр safecrlf:  
   git config --global core.safecrlf warn
-![Рис5](image/Рис5.png){#fig:001 width=70%}
+![Рис5](image/Рис5.png)
 
 ### Созданиче ключа ssh
 
@@ -68,7 +68,7 @@ dnf install gh
   (см. "Рис5")  
 * для копирования ключа нам понадобится команда:  
   cat ~/.ssh/id_rsa.pub  
-![Рис6](image/Рис6.png){#fig:001 width=70%}  
+![Рис6](image/Рис6.png)  
 * далее добавляем скопированный ключ SSH на GitHub:  
 ![Рис7](image/Рис7.png)
 
@@ -85,8 +85,8 @@ dnf install gh
   * Адрес электронной почты.
     * При вводе email убедитесь, что он соответствует адресу, используемому на GitHub.
   * Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.
-![Рис8](image/Рис8.png){#fig:001 width=70%}
-![Рис9](image/Рис9.png){#fig:001 width=70%}
+![Рис8](image/Рис8.png)
+![Рис9](image/Рис9.png)
 
 ### Добавление PGP ключа в GitHub
 
@@ -96,13 +96,13 @@ dnf install gh
 * Формат строки:  
   sec   Алгоритм/Отпечаток_ключа Дата_создания [Флаги] [Годен_до]
       ID_ключа  
-![Рис10](image/Рис10.png){#fig:001 width=70%}  
+![Рис10](image/Рис10.png)  
 * Cкопируйте ваш сгенерированный PGP ключ в буфер обмена:  
   gpg --armor --export <PGP Fingerprint> | xclip -sel clip
-![Рис11](image/Рис11.png){#fig:001 width=70%}  
+![Рис11](image/Рис11.png)  
 Примечание: я использовала в качестве параметра <PGP Fingerprint> свою почту, указанную при создании ключа PGP, однако, корректнее было бы использовать "Отпечаток_ключа" как на "Рис10" - A014F1F727513168.
 * Перейдите в настройки GitHub (https://github.com/settings/keys), нажмите на кнопку New GPG key и вставьте полученный ключ в поле ввода.  
-![Рис13](image/Рис13.png){#fig:001 width=70%}
+![Рис13](image/Рис13.png)
 
 ### Настройка автоматических подписей коммитов git
 
@@ -110,19 +110,19 @@ dnf install gh
   git config --global user.signingkey <PGP Fingerprint>  
   git config --global commit.gpgsign true  
   git config --global gpg.program S(which gpg2)  
-![Рис12](image/Рис12.png){#fig:001 width=70%}
+![Рис12](image/Рис12.png)
 
 ### Настройка gh
 
 * Для начала необходимо авторизоваться  
   gh auth login
 * Утилита задаст несколько наводящих вопросов.  
-![Рис14](image/Рис14.png){#fig:001 width=70%}  
+![Рис14](image/Рис14.png)  
 * Авторизоваться можно через браузер.
-![Рис15](image/Рис15.png){#fig:001 width=70%}  
-![Рис16](image/Рис16.png){#fig:001 width=70%}  
+![Рис15](image/Рис15.png)  
+![Рис16](image/Рис16.png)  
 * Результат выполнения корректной работы по настройке gh:  
-![Рис17](image/Рис17.png){#fig:001 width=70%}
+![Рис17](image/Рис17.png)
 
 ### Сознание репозитория курса на основе шаблона
 
@@ -132,8 +132,8 @@ dnf install gh
   cd ~/work/study/2022-2023/"Операционные системы" 
   gh repo create study_2022-2023_os-intro --template=yamadharma/course-directory-student-template --public  
   git clone --recursive git@github.com:<owner>/study_2022-2023_os-intro.git os-intro  
-![Рис18](image/Рис18.png){#fig:001 width=70%}  
-![Рис19](image/Рис19.png){#fig:001 width=70%}
+![Рис18](image/Рис18.png)  
+![Рис19](image/Рис19.png)
 
 ### Настройка каталога курса
 
@@ -144,12 +144,12 @@ dnf install gh
 * Создайте необходимые каталоги:  
   echo os-intro > COURSE  
   make
-![Рис20](image/Рис20.png){#fig:001 width=70%}  
+![Рис20](image/Рис20.png)  
 * Отправьте файлы на сервер:  
   git add .  
   git commit -am 'feat(main): make course structure'  
   git push  
-![Рис21](image/Рис21.png){#fig:001 width=70%}  
+![Рис21](image/Рис21.png)  
 Примечание: если при коммите выводит ошибку как на "Рис21", может помочь команда  
 export GPG_TTY=$(tty)
 
