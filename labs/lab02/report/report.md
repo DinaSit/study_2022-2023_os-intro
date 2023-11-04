@@ -85,7 +85,7 @@ header-includes:
 ## Установка программного обеспечения
 Установим git при помощи команды:  
 dnf install git  
-![Рис1](image/Рис1.jpg){#fig:001 width=70%}
+![Рис1](image/Рис1.png){#fig:001 width=70%}
 Установим gh при помощи команды:  
 dnf install gh  
 ![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
