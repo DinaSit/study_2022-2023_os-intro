@@ -1,4 +1,10 @@
-
+---
+mainfont: Times New Roman
+monofont: "Courier New"
+fontsize: 12pt
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+lang: russian
+---
 ## **РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ**
 ### **Факультет физико-математических и естественных наук**
 ### **Кафедра прикладной информатики и теории вероятностей**
