@@ -83,56 +83,49 @@ header-includes:
 # Выполнение лабораторной работы
 
 ## Установка программного обеспечения
-Установка git
-Установим git:
-
+Установим git при помощи команды:
 dnf install git
 
-Установка gh
-Fedora:
-
+Установим gh при помощи команды:
 dnf install gh
 
 ## Базовая настройка git
-Зададим имя и email владельца репозитория:
+* Зададим имя и email владельца репозитория при помощи следующих команд:
+  git config --global user.name "Name Surname"
+  git config --global user.email "work@mail"
 
-git config --global user.name "Name Surname"
-git config --global user.email "work@mail"
-Настроим utf-8 в выводе сообщений git:
+* Настроим utf-8 в выводе сообщений git командой:
+  git config --global core.quotepath false
 
-git config --global core.quotepath false
-Настройте верификацию и подписание коммитов git (см. Верификация коммитов git с помощью GPG).
-Зададим имя начальной ветки (будем называть её master):
+* Зададим имя начальной ветки (будем называть её master):
+  git config --global init.defaultBranch master
 
-git config --global init.defaultBranch master
-Параметр autocrlf:
+* Параметр autocrlf:
+  git config --global core.autocrlf input
 
-git config --global core.autocrlf input
-Параметр safecrlf:
+* Параметр safecrlf:
+  git config --global core.safecrlf warn
 
-git config --global core.safecrlf warn
+## Созданиче ключа ssh
+* по алгоритму rsa с ключём размером 4096 бит:
+  ssh-keygen -t rsa -b 4096
 
-## Создайте ключи ssh
-по алгоритму rsa с ключём размером 4096 бит:
+* по алгоритму ed25519:
+  ssh-keygen -t ed25519
+  
+## Создание ключа pgp
+* Генерируем ключ при помощи команды:
+  gpg --full-generate-key
 
-ssh-keygen -t rsa -b 4096
-по алгоритму ed25519:
-
-ssh-keygen -t ed25519
-
-## Создайте ключи pgp
-Генерируем ключ
-
-gpg --full-generate-key
-Из предложенных опций выбираем:
-тип RSA and RSA;
-размер 4096;
-выберите срок действия; значение по умолчанию — 0 (срок действия не истекает никогда).
-GPG запросит личную информацию, которая сохранится в ключе:
-Имя (не менее 5 символов).
-Адрес электронной почты.
-При вводе email убедитесь, что он соответствует адресу, используемому на GitHub.
-Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.
+* Из предложенных опций выбираем:
+* * тип RSA and RSA;
+* * размер 4096;
+* * выберите срок действия; значение по умолчанию — 0 (срок действия не истекает никогда).
+* GPG запросит личную информацию, которая сохранится в ключе:
+* * Имя (не менее 5 символов).
+* * Адрес электронной почты.
+* * * При вводе email убедитесь, что он соответствует адресу, используемому на GitHub.
+* * Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.
 
 ## Настройка github
 Создайте учётную запись на https://github.com.
