@@ -2,12 +2,13 @@
 ## Front matter
 title: Отчет по лабораторной работе №2
 subtitle: "Дисциплина: Операционные системы"
-author: "Ситникова Диана Александровна\nГруппа: НПИбд-01-22"
+author: "Ситникова Диана Александровна"
+description: "Группа: НПИбд-01-22"
 date: "Москва 2023г"
 
 ## Generic otions
 lang: ru-RU
-
+toc-title: "Содержание"
 
 ## Bibliography
 bibliography: bib/cite.bib
@@ -22,7 +23,6 @@ fontsize: 12pt
 linestretch: 1.5
 papersize: a4
 documentclass: scrreprt
-toc-title: "Содержание"
 ## I18n polyglossia
 polyglossia-lang:
   name: russian
