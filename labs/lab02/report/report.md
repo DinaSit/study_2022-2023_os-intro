@@ -1,8 +1,9 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Отчет по лабораторной работе №2"
+subtitle: "Дисциплина: Операционные системы"
+author: "Ситникова Диана Александровна Группа: НПИбд-01-22"
+date: "Москва 2023г"
 
 ## Generic otions
 lang: ru-RU
@@ -25,8 +26,8 @@ documentclass: scrreprt
 polyglossia-lang:
   name: russian
   options:
-    - spelling=modern
-    - babelshorthands=true
+	- spelling=modern
+	- babelshorthands=true
 polyglossia-otherlangs:
   name: english
 ## I18n babel
@@ -63,7 +64,7 @@ indent: true
 header-includes:
   - \usepackage{indentfirst}
   - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text  
+  - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 # Цель работы
 
