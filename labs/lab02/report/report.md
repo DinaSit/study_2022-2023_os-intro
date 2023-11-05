@@ -8,7 +8,7 @@ date: "Москва 2023г"
 
 ## Generic otions
 lang: ru-RU
-toc-title: "Содержание"
+table-of-contents: "Содержание"
 
 ## Bibliography
 bibliography: bib/cite.bib
