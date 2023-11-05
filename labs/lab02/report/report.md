@@ -5,17 +5,19 @@ subtitle: "Дисциплина: Операционные системы"
 author: "Ситникова Диана Александровна"
 description: "Группа: НПИбд-01-22"
 date: "Москва 2023г"
+toc: true # Table of contents
+toc-title: "Содержание"
 
 ## Generic otions
 lang: ru-RU
-table-of-contents: "Содержание"
+
 
 ## Bibliography
 bibliography: bib/cite.bib
 csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
 
 ## Pdf output format
-toc: true # Table of contents
+
 toc-depth: 3
 lof: true # List of figures
 lot: true # List of tables
