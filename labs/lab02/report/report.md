@@ -1,6 +1,6 @@
 ---
 ## Front matter
-title: "Отчет по лабораторной работе №2"
+title: "Отчет по лабораторной работе 2"
 subtitle: "Дисциплина: Операционные системы"
 author: "Ситникова Диана Александровна  Группа: НПИбд-01-22"
 date: "Москва 2023г"
@@ -64,7 +64,7 @@ indent: true
 header-includes:
   - \usepackage{indentfirst}
   - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+  - \floatplacement{figure}{H} # keep figures where there are in the text  
 ---
 # Цель работы
 
