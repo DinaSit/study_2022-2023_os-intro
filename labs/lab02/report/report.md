@@ -107,7 +107,7 @@ dnf install gh
 * Параметр autocrlf:  
   git config --global core.autocrlf input
 * Параметр safecrlf:  
-  git config --global core.safecrlf warn
+  git config --global core.safecrlf warn  
 ![Рис5](image/Рис5.png)
 
 ## Созданиче ключа ssh
@@ -134,7 +134,7 @@ dnf install gh
   * Адрес электронной почты.
     * При вводе email убедитесь, что он соответствует адресу, используемому на GitHub.
   * Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.
-![Рис8](image/Рис8.png)
+![Рис8](image/Рис8.png)  
 ![Рис9](image/Рис9.png)
 
 ## Добавление PGP ключа в GitHub
