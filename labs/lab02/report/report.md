@@ -16,7 +16,7 @@ csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
 
 ## Pdf output format
 toc: true # Table of contents
-toc-depth: 3
+toc-depth: 2
 lof: true # List of figures
 lot: true # List of tables
 fontsize: 12pt
@@ -53,6 +53,12 @@ biblatexoptions:
   - language=auto
   - autolang=other*
   - citestyle=gost-numeric
+## Pandoc-crossref LaTeX customization
+figureTitle: "Рис."
+tableTitle: "Таблица"
+listingTitle: "Листинг"
+lofTitle: "Список иллюстраций"
+lolTitle: "Листинги"
 ## Misc options
 indent: true
 header-includes:
@@ -60,6 +66,7 @@ header-includes:
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
+
 # Цель работы
 
 Изучить идеологию и применение средств контроля версий.  
@@ -79,12 +86,12 @@ header-includes:
 ## Установка программного обеспечения
 
 Установим git при помощи команды:  
-dnf install git  
-![Рис.1: Установка git](image/Рис1.png)  
+dnf install git(рис. [-@fig:001])  
+![Рис.1: Установка git](image/Рис1.png){ #fig:001 width=100% }  
 Установим gh при помощи команды:  
-dnf install gh  
-![Рис.2: Установка gh](image/Рис2.png)  
-![Рис.3: Результат установки gh](image/Рис3.png)  
+dnf install gh(рис. [-@fig:002])(рис. [-@fig:003])  
+![Рис.2: Установка gh](image/Рис2.png){ #fig:001 width=100% }  
+![Рис.3: Результат установки gh](image/Рис3.png){ #fig:001 width=100% }  
 
 ## Базовая настройка git
 
@@ -92,15 +99,15 @@ dnf install gh
   git config --global user.name "Name Surname"  
   git config --global user.email "work@mail"
 * Настроим utf-8 в выводе сообщений git командой:  
-  git config --global core.quotepath false  
-![Рис.4: Базовая настройка git](image/Рис4.png)  
+  git config --global core.quotepath false(рис. [-@fig:004])  
+![Рис.4: Базовая настройка git](image/Рис4.png){ #fig:001 width=100% }  
 * Зададим имя начальной ветки (будем называть её master):  
   git config --global init.defaultBranch master
 * Параметр autocrlf:  
   git config --global core.autocrlf input
 * Параметр safecrlf:  
-  git config --global core.safecrlf warn  
-![Рис.5: Окончание базовой настройки git и генерация SSH ключа](image/Рис5.png)
+  git config --global core.safecrlf warn(рис. [-@fig:005])  
+![Рис.5: Окончание базовой настройки git и генерация SSH ключа](image/Рис5.png){ #fig:001 width=100% }
 
 ## Созданиче ключа ssh
 
@@ -108,10 +115,10 @@ dnf install gh
   ssh-keygen -t rsa -b 4096  
   (см. "Рис5")  
 * для копирования ключа нам понадобится команда:  
-  cat ~/.ssh/id_rsa.pub  
-![Рис.6: Копирование SSH ключа](image/Рис6.png)  
-* далее добавляем скопированный ключ SSH на GitHub:  
-![Рис.7: Форма ввода SSH ключа в настройках GitHub](image/Рис7.png)
+  cat ~/.ssh/id_rsa.pub(рис. [-@fig:006])  
+![Рис.6: Копирование SSH ключа](image/Рис6.png){ #fig:001 width=100% }  
+* далее добавляем скопированный ключ SSH на GitHub:(рис. [-@fig:007])  
+![Рис.7: Форма ввода SSH ключа в настройках GitHub](image/Рис7.png){ #fig:001 width=100% }
 
 ## Создание ключа pgp
 
@@ -125,9 +132,9 @@ dnf install gh
   * Имя (не менее 5 символов).
   * Адрес электронной почты.
     * При вводе email убедитесь, что он соответствует адресу, используемому на GitHub.
-  * Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.  
-![Рис.8: Генерация PGP ключа](image/Рис8.png)  
-![Рис.9: Результат генерации PGP ключа](image/Рис9.png)
+  * Комментарий. Можно ввести что угодно или нажать клавишу ввода, чтобы оставить это поле пустым.(рис. [-@fig:008])(рис. [-@fig:009])  
+![Рис.8: Генерация PGP ключа](image/Рис8.png){ #fig:001 width=100% }  
+![Рис.9: Результат генерации PGP ключа](image/Рис9.png){ #fig:001 width=100% }
 
 ## Добавление PGP ключа в GitHub
 
@@ -136,34 +143,34 @@ dnf install gh
 * Отпечаток ключа — это последовательность байтов, используемая для идентификации более длинного, по сравнению с самим отпечатком ключа.
 * Формат строки:  
   sec   Алгоритм/Отпечаток_ключа Дата_создания [Флаги] [Годен_до]
-      ID_ключа  
-![Рис.10: Формат строки списка ключей](image/Рис10.png)  
+      ID_ключа(рис. [-@fig:010])  
+![Рис.10: Формат строки списка ключей](image/Рис10.png){ #fig:001 width=100% }  
 * Cкопируйте ваш сгенерированный PGP ключ в буфер обмена:  
-  gpg --armor --export <PGP Fingerprint> | xclip -sel clip  
-![Рис.11: Копирование PGP ключа](image/Рис11.png)  
+  gpg --armor --export <PGP Fingerprint> | xclip -sel clip(рис. [-@fig:011])  
+![Рис.11: Копирование PGP ключа](image/Рис11.png){ #fig:001 width=100% }  
 Примечание: я использовала в качестве параметра <PGP Fingerprint> свою почту, указанную при создании ключа PGP, однако, корректнее было бы использовать "Отпечаток_ключа" как на "Рис10" - A014F1F727513168.
-* Перейдите в настройки GitHub (https://github.com/settings/keys), нажмите на кнопку New GPG key и вставьте полученный ключ в поле ввода.  
-![Рис.13: Форма ввода PGP ключа в настройках GitHub](image/Рис13.png)
+* Перейдите в настройки GitHub (https://github.com/settings/keys), нажмите на кнопку New GPG key и вставьте полученный ключ в поле ввода.(рис. [-@fig:012])  
+![Рис.13: Форма ввода PGP ключа в настройках GitHub](image/Рис13.png){ #fig:001 width=100% }
 
 ## Настройка автоматических подписей коммитов git
 
 * Используя введёный email, укажите Git применять его при подписи коммитов:  
   git config --global user.signingkey <PGP Fingerprint>  
   git config --global commit.gpgsign true  
-  git config --global gpg.program S(which gpg2)  
-![Рис.12: Настройка автоматических подписей коммитов git](image/Рис12.png)
+  git config --global gpg.program S(which gpg2)(рис. [-@fig:013])  
+![Рис.12: Настройка автоматических подписей коммитов git](image/Рис12.png){ #fig:001 width=100% }
 
 ## Настройка gh
 
 * Для начала необходимо авторизоваться  
   gh auth login
-* Утилита задаст несколько наводящих вопросов.  
-![Рис.14: Вопросы при авторизации gh](image/Рис14.png)  
-* Авторизоваться можно через браузер.  
-![Рис.15: Авторизация gh при помощи браузера](image/Рис15.png)  
-![Рис.16: Результат авторизации gh при помощи браузера](image/Рис16.png)  
-* Результат выполнения корректной работы по настройке gh:  
-![Рис.17: Результат выполнения корректной работы по настройке gh](image/Рис17.png)
+* Утилита задаст несколько наводящих вопросов.(рис. [-@fig:014])  
+![Рис.14: Вопросы при авторизации gh](image/Рис14.png){ #fig:001 width=100% }  
+* Авторизоваться можно через браузер.(рис. [-@fig:015])(рис. [-@fig:016])  
+![Рис.15: Авторизация gh при помощи браузера](image/Рис15.png){ #fig:001 width=100% }  
+![Рис.16: Результат авторизации gh при помощи браузера](image/Рис16.png){ #fig:001 width=100% }  
+* Результат выполнения корректной работы по настройке gh:(рис. [-@fig:017])  
+![Рис.17: Результат выполнения корректной работы по настройке gh](image/Рис17.png){ #fig:001 width=100% }
 
 ## Сознание репозитория курса на основе шаблона
 
@@ -172,9 +179,9 @@ dnf install gh
   mkdir -p ~/work/study/2022-2023/"Операционные системы"  
   cd ~/work/study/2022-2023/"Операционные системы" 
   gh repo create study_2022-2023_os-intro --template=yamadharma/course-directory-student-template --public  
-  git clone --recursive git@github.com:<owner>/study_2022-2023_os-intro.git os-intro  
-![Рис.18: Сознание репозитория курса на основе шаблона](image/Рис18.png)  
-![Рис.19: Результат клонирования репозитория курса на основе шаблона](image/Рис19.png)
+  git clone --recursive git@github.com:<owner>/study_2022-2023_os-intro.git os-intro(рис. [-@fig:018])(рис. [-@fig:019])  
+![Рис.18: Сознание репозитория курса на основе шаблона](image/Рис18.png){ #fig:001 width=100% }  
+![Рис.19: Результат клонирования репозитория курса на основе шаблона](image/Рис19.png){ #fig:001 width=100% }
 
 ## Настройка каталога курса
 
@@ -184,13 +191,13 @@ dnf install gh
   rm package.json
 * Создайте необходимые каталоги:  
   echo os-intro > COURSE  
-  make  
-![Рис.20: Настройка каталога курса](image/Рис20.png)  
+  make(рис. [-@fig:020])  
+![Рис.20: Настройка каталога курса](image/Рис20.png){ #fig:001 width=100% }  
 * Отправьте файлы на сервер:  
   git add .  
   git commit -am 'feat(main): make course structure'  
-  git push  
-![Рис.21: Результат отправки файлов на сервер GitHub](image/Рис21.png)  
+  git push(рис. [-@fig:021])  
+![Рис.21: Результат отправки файлов на сервер GitHub](image/Рис21.png){ #fig:001 width=100% }  
 Примечание: если при коммите выводит ошибку как на "Рис21", может помочь команда  
 export GPG_TTY=$(tty)
 
