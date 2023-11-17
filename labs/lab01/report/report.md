@@ -78,25 +78,24 @@ header-includes:
 Произведём скачивание и установку виртуальной машины через сайт(рис. [-@fig:001]):  
 ![Рис. 1: Проверка наличия обновлений для VirtualBox](image/"Рис1.png"){ #fig:001 width=100% }  
 [https://www.virtualbox.org/](https://www.virtualbox.org/)  
-Далее скачаем дистрибутив Linux Fedora-35(рис. [-@fig:001]):  
+Далее скачаем дистрибутив Linux Fedora-35(рис. [-@fig:002]):  
 ![Рис. 2: Установка Linux Fedora-35](image/"Рис2.png"){ #fig:002 width=100% }  
 [https://getfedora.org/ru/workstation/download](https://fedoraproject.org/spins/i3/download/)
 
 ## Создание виртуальной машины
 
-* Зададим имя и email владельца репозитория при помощи следующих команд:  
-  git config --global user.name "Name Surname"  
-  git config --global user.email "work@mail"
-* Настроим utf-8 в выводе сообщений git командой:  
-  git config --global core.quotepath false(рис. [-@fig:004])  
-![Рис.4: Базовая настройка git](image/Рис4.png){ #fig:001 width=100% }  
-* Зададим имя начальной ветки (будем называть её master):  
-  git config --global init.defaultBranch master
-* Параметр autocrlf:  
-  git config --global core.autocrlf input
-* Параметр safecrlf:  
-  git config --global core.safecrlf warn(рис. [-@fig:005])  
-![Рис.5: Окончание базовой настройки git и генерация SSH ключа](image/Рис5.png){ #fig:001 width=100% }
+* Запустите менеджер виртуальных машин.  
+* Создайте новую виртуальную машину.  
+* Укажите имя виртуальной машины (ваш логин в дисплейном классе), тип операционной системы — Linux, Fedora(рис. [-@fig:003]):  
+![Рис. 2: Установка Linux Fedora-35](image/"Рис3.png"){ #fig:003 width=100% }  
+* Укажите размер основной памяти виртуальной машины — от 2048 МБ(рис. [-@fig:004]):  
+![Рис. 2: Установка Linux Fedora-35](image/"Рис4.png"){ #fig:004 width=100% }  
+* Задайте конфигурацию жёсткого диска — загрузочный, VDI (VirtualBox Disk Image), динамический виртуальный диск.  
+* Задайте размер диска — 80 ГБ (или больше), его расположение — в данном случае /var/tmp/имя_пользователя/fedora.vdi(рис. [-@fig:005]):  
+![Рис. 2: Установка Linux Fedora-35](image/"Рис5.png"){ #fig:005 width=100% }  
+* Выберите в VirtualBox Вашей виртуальной машины. Добавьте новый привод оптических дисков и выберите образ.  
+* При установке на собственной технике используйте скачанный образ операционной системы Fedora(рис. [-@fig:006]):  
+![Рис. 2: Установка Linux Fedora-35](image/"Рис6.png"){ #fig:006 width=100% }  
 
 ## Созданиче ключа ssh
 
