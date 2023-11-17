@@ -77,7 +77,7 @@ header-includes:
 
 Произведём скачивание и установку виртуальной машины через сайт:  
 [https://www.virtualbox.org/](https://www.virtualbox.org/)(рис. [-@fig:001])  
-![Рис. 1: Проверка наличия обновлений для VirtualBox](labs/lab01/report/image/Рис. 1.png){ #fig:001 width=100% }  
+![Рис. 1: Проверка наличия обновлений для VirtualBox](image/"Рис. 1.png"){ #fig:001 width=100% }  
 Далее скачаем дистрибутив Linux Fedora-35:  
 [https://getfedora.org/ru/workstation/download](https://fedoraproject.org/spins/i3/download/)
 
