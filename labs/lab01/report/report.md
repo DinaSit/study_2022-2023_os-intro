@@ -75,15 +75,13 @@ header-includes:
 
 ## Установка программного обеспечения
 
-Установим git при помощи команды:  
-dnf install git(рис. [-@fig:001])  
-![Рис.1: Установка git](image/Рис1.png){ #fig:001 width=100% }  
-Установим gh при помощи команды:  
-dnf install gh(рис. [-@fig:002])(рис. [-@fig:003])  
-![Рис.2: Установка gh](image/Рис2.png){ #fig:001 width=100% }  
-![Рис.3: Результат установки gh](image/Рис3.png){ #fig:001 width=100% }  
+Произведём скачивание и установку виртуальной машины через сайт:  
+[https://www.virtualbox.org/](https://www.virtualbox.org/)(рис. [-@fig:001])  
+![Рис. 1: Проверка наличия обновлений для VirtualBox](image/Рис.1.png){ #fig:001 width=100% }  
+Далее скачаем дистрибутив Linux Fedora-35:  
+[https://getfedora.org/ru/workstation/download](https://fedoraproject.org/spins/i3/download/)
 
-## Базовая настройка git
+## Создание виртуальной машины
 
 * Зададим имя и email владельца репозитория при помощи следующих команд:  
   git config --global user.name "Name Surname"  
