@@ -81,11 +81,44 @@ header-includes:
 ## Установка программного обеспечения
 
 Для обработки файлов в формате Markdown будем использовать:  
-* Pandoc https://pandoc.org/. Конкретно, нам понадобится программа pandoc.
-  
-* pandoc-crossref https://github.com/lierdakil/pandoc-crossref/releases.
+* Pandoc [https://pandoc.org/](https://pandoc.org/). Конкретно, нам понадобится программа pandoc.  
+  Я устанавливала Pandoc в Fedora Linux, используя исходный код с репозитория GitHub, выполняя следующие шаги:  
+  1. Сначала нам потребуется скачать и установить обновленную версию Pandoc с GitHub. Вы можете воспользоваться следующими командами:  
+     Перейдите во временный каталог при помощи команды cd /tmp  
+  2. Скачаем архив с GitHub  
+     wget https://github.com/jgm/pandoc/releases/download/X.XX/pandoc-X.XX-linux-amd64.tar.gz  
+     Заменим X.XX в URL на версию Pandoc, которую хотим установить.  
+  3. Распакуем скачанный архив:  
+     tar -xvf pandoc-X.XX-linux-amd64.tar.gz  
+  4. Перейдем в каталог с распакованными файлами:  
+     cd pandoc-X.XX  
+  5. Скопируем файл pandoc в каталог, доступный в системе, например, /usr/local/bin:  
+     sudo cp pandoc /usr/local/bin/  
+  6. Теперь Pandoc должен быть обновлен до версии, которую загрузили с GitHub. Проверим версию Pandoc с помощью команды:  
+     pandoc --version  
+  Обратите внимание, что обновления и управление зависимостями, возможно, потребуют дополнительных действий, и обновления из официальных репозиториев Fedora обычно более надежны и просты. Используйте этот метод с осторожностью и только в случае необходимости.  
+* pandoc-crossref [https://github.com/lierdakil/pandoc-crossref/releases](https://github.com/lierdakil/pandoc-crossref/releases).  
+  Я устанавливала Pandoc-crossref в Fedora Linux, используя исходный код с репозитория GitHub, выполняя следующие шаги:  
+  1. Убедимся, что на системе установлены необходимые зависимости, такие как GHC (Glasgow Haskell Compiler) и Cabal:  
+     sudo dnf install ghc cabal-install  
+  2. Клонируем репозиторий Pandoc-crossref с GitHub:  
+     git clone https://github.com/lierdakil/pandoc-crossref.git  
+  3. Перейдем в каталог, который был создан после клонирования репозитория:  
+     cd pandoc-crossref  
+  4. Запустим процесс установки Pandoc-crossref с помощью Cabal:  
+     cabal install  
+     Это может занять некоторое время, так как Cabal будет загружать зависимости и компилировать Pandoc-crossref.  
+  5. После установки убедимся, что путь к исполняемому файлу Pandoc-crossref добавлен в переменную окружения PATH. Это позволит вызывать Pandoc-crossref из любого места в терминале.  
+     export PATH=$PATH:~/.cabal/bin  
+  6. Чтобы сделать это изменение постоянным, добавим указанную строку в файл ~/.bashrc или ~/.bash_profile:  
+     echo 'export PATH=$PATH:~/.cabal/bin' >> ~/.bashrc  
+  7. Затем выполним source ~/.bashrc, чтобы применить изменения.  
+  8. Теперь Pandoc-crossref должен быть установлен на системе. Проверим его, выполнив команду:  
+     pandoc-crossref --version  
+  Если возникнут проблемы в процессе установки, убедитесь, что у вас установлены все необходимые зависимости и что ваша версия GHC и Cabal совместимы с Pandoc-crossref.
+* 
 
-## Базовая настройка git
+## Оформление отчета по лабораторной работе
 
 * Зададим имя и email владельца репозитория при помощи следующих команд:  
   git config --global user.name "Name Surname"  
@@ -101,7 +134,7 @@ header-includes:
   git config --global core.safecrlf warn(рис. [-@fig:005])  
 ![Рис.5: Окончание базовой настройки git и генерация SSH ключа](image/Рис5.png){ #fig:005 width=100% }
 
-## Созданиче ключа ssh
+## Пуш файлов на GitHub
 
 * по алгоритму rsa с ключём размером 4096 бит:  
   ssh-keygen -t rsa -b 4096  
